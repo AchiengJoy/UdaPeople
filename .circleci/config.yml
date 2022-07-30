@@ -121,7 +121,7 @@ jobs:
         name: Scan backend
         command: |
           cd backend
-          install npm
+          npm install
           npm audit fix --audit-level=critical
           npm audit --audit-level=critical
 
