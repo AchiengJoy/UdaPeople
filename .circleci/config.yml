@@ -180,7 +180,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - '00:a9:33:df:d3:b1:9e:7a:d8:91:d8:fe:4b:df:0e:40'
+            - "00:a9:33:df:d3:b1:9e:7a:d8:91:d8:fe:4b:df:0e:40"
       - run:
           name: Install dependencies
           command: |
@@ -193,7 +193,7 @@ jobs:
             cd .circleci/ansible
             ansible-playbook -i inventory.txt configure-server.yml
       - destroy-environment:
-          workflow_id: ${CIRCLE_WORKFLOW_ID:0:7} 
+          workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
 
   run-migrations:
     docker:
@@ -216,7 +216,7 @@ jobs:
       - run:
           name: Send migration results to kvdb.io
           command: |
-             if grep -q "success" ~/project/backend/migrations.txt
+            if grep -q "success" ~/project/backend/migrations.txt
             then
               curl --insecure https://kvdb.io/Warii265DHgCJq995Gby5H/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             fi
