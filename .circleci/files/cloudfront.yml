@@ -3,7 +3,7 @@ Description: >
   ws cloudformation deploy \
          --template-file cloudfront.yml \
          --stack-name InitialStack\
-         --parameter-overrides WorkflowID=udapeople954
+         --parameter-overrides WorkflowID=udapeople-900090009954
 
 Parameters:
   WorkflowID:
